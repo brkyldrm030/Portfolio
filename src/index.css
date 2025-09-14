@@ -7,6 +7,24 @@
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Fallback für ältere Browser */
+  touch-action: pan-y; /* verhindert horizontales Wobbeln beim Scrollen */
+}
+
+@supports (overflow: clip) {
+  html,
+  body,
+  #root {
+    overflow-x: clip; /* moderne, saubere Variante */
+  }
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 20px;
 }
